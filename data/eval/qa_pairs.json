@@ -1,0 +1,20 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the normal temperature range for a healthy dog?",
+    "answer": "38.3–39.2 °C",
+    "notes": "Replace with the exact phrasing from your notes."
+  },
+  {
+    "id": "q2",
+    "question": "List the common causes of vomiting in cats.",
+    "answer": "Dietary indiscretion, hairballs, parasites, infections, toxins",
+    "notes": "Short canonical answer; edit to match your notes."
+  },
+  {
+    "id": "q3",
+    "question": "How do you perform a physical exam on a horse's limbs?",
+    "answer": "Inspect, palpate, assess gait, flexion tests, check digital pulses",
+    "notes": "Example — replace with real QA pairs from your notes."
+  }
+]
