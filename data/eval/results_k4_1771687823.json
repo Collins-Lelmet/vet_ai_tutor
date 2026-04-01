@@ -1,0 +1,426 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the normal temperature range for a healthy dog?",
+    "expected": "38.3\u201339.2 \u00b0C",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.43478527665138245
+  },
+  {
+    "id": "q2",
+    "question": "List the common causes of vomiting in cats.",
+    "expected": "Dietary indiscretion, hairballs, parasites, infections, toxins",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.3642660677433014
+  },
+  {
+    "id": "q3",
+    "question": "How do you perform a physical exam on a horse's limbs?",
+    "expected": "Inspect, palpate, assess gait, flexion tests, check digital pulses",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.601927638053894
+  },
+  {
+    "id": "q1",
+    "question": "What are the four main types of endocrine disorders?",
+    "expected": "Hormone excess, hormone deficiency, and decreased responsiveness of receptors.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5039077401161194
+  },
+  {
+    "id": "q2",
+    "question": "What are the five cardinal signs of inflammation?",
+    "expected": "Heat (calor), redness (rubor), swelling (tumor), pain (dolor), and loss of function.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6790248155593872
+  },
+  {
+    "id": "q3",
+    "question": "According to the notes, what are the three most important pharmacokinetic parameters?",
+    "expected": "Bioavailability, volume of distribution, and clearance.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.41026079654693604
+  },
+  {
+    "id": "q4",
+    "question": "What are the three main components of a complete flock history for diagnosing poultry diseases?",
+    "expected": "Owner information, management information, and information on the illness.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4237378239631653
+  },
+  {
+    "id": "q5",
+    "question": "Which four groups of clostridia are mentioned based on their pathogenic effects?",
+    "expected": "Neurotoxic, histotoxic, enterotoxigenic, and those associated with antibiotic-induced disease.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4081352949142456
+  },
+  {
+    "id": "q6",
+    "question": "What are the three main classifications of zoonoses according to their mode of transmission?",
+    "expected": "Direct zoonoses, cyclozoonoses, and metazoonoses.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4334481954574585
+  },
+  {
+    "id": "q7",
+    "question": "What are the three main layers of the arthropod exoskeleton?",
+    "expected": "The epicuticle, exocuticle, and endocuticle.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.31940650939941406
+  },
+  {
+    "id": "q8",
+    "question": "What are the two main types of sutures based on the number of ties and needle insertions?",
+    "expected": "Interrupted sutures (tied separately) and continuous sutures (one tie at the beginning and end).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5815416574478149
+  },
+  {
+    "id": "q9",
+    "question": "List six important factors in toxicant-induced liver injury.",
+    "expected": "Uptake and concentration, bioactivation and detoxification, regeneration, inflammation, immune responses, and idiosyncratic reactions.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4336891770362854
+  },
+  {
+    "id": "q10",
+    "question": "What are the three main classes of hormones based on their chemical structure?",
+    "expected": "Steroids, proteins/polypeptides, and modified amino acids (or fatty acids).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.47210952639579773
+  },
+  {
+    "id": "q11",
+    "question": "Name the three main bacterial genera known to cause omphalitis in chicks, as mentioned in the notes.",
+    "expected": "Escherichia, Staphylococcus, and Proteus.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.49934759736061096
+  },
+  {
+    "id": "q12",
+    "question": "Which zoonotic disease is considered the most common, widely prevalent, and economically most important viral disease of poultry?",
+    "expected": "Newcastle disease (also known as Ranikhet disease).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.3833269774913788
+  },
+  {
+    "id": "q13",
+    "question": "What are the two main classes of arthropods of veterinary importance?",
+    "expected": "Insecta and Arachnida.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6143482327461243
+  },
+  {
+    "id": "q14",
+    "question": "What is the mechanism of action of non-steroid hormones?",
+    "expected": "They use a second messenger system, such as cAMP or calcium, to exert their effect inside the cell.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.40511977672576904
+  },
+  {
+    "id": "q15",
+    "question": "What is the main predisposing factor for necrotic enteritis in poultry?",
+    "expected": "Outbreaks of coccidiosis, which damage the intestinal lining and allow Clostridium perfringens to proliferate.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7342522144317627
+  },
+  {
+    "id": "q16",
+    "question": "What is a haematoma and what is a common cause in dogs?",
+    "expected": "A haematoma is an excessive collection of blood beneath the skin, often caused by rupture of a blood vessel from persistent head shaking, such as in cases of otitis.",
+    "found": true,
+    "status": "FOUND",
+    "best_sim": 0.7655507922172546
+  },
+  {
+    "id": "q17",
+    "question": "What is 'pulpy kidney' disease and what causes it?",
+    "expected": "A disease in sheep caused by Clostridium perfringens type D, characterized by a toxemia that leads to kidney damage.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7110971212387085
+  },
+  {
+    "id": "q18",
+    "question": "Name the two main types of liver injury based on cell death morphology.",
+    "expected": "Oncotic necrosis (necrosis) and apoptosis.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5846682786941528
+  },
+  {
+    "id": "q19",
+    "question": "What is a key difference between Staphylococcus and Micrococcus?",
+    "expected": "Micrococcus are typically oxidase-positive and oxidative in metabolism, whereas Staphylococcus are oxidase-negative and fermentative.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5382206439971924
+  },
+  {
+    "id": "q20",
+    "question": "What are the two forms of Marek's disease described in the notes?",
+    "expected": "Classical Marek's disease (nerve enlargement and paralysis) and acute Marek's disease (visceral tumors).",
+    "found": true,
+    "status": "FOUND",
+    "best_sim": 0.8017808198928833
+  },
+  {
+    "id": "q21",
+    "question": "What are the three types of plague based on the route of infection in humans?",
+    "expected": "Bubonic (from flea bite), pneumonic (inhalation), and septicemic (spread to bloodstream).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5551177859306335
+  },
+  {
+    "id": "q22",
+    "question": "What is the function of the hypothalamic-hypophyseal portal system?",
+    "expected": "It carries hypothalamic regulatory hormones directly to the anterior pituitary gland to control its secretion of trophic hormones.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.696357786655426
+  },
+  {
+    "id": "q23",
+    "question": "What are the three forms of salmonellosis based on clinical presentation?",
+    "expected": "Septicemic form, acute enteritis, and chronic enteritis.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.516923189163208
+  },
+  {
+    "id": "q24",
+    "question": "What is the main function of a Penrose drain, and what is its primary disadvantage?",
+    "expected": "It is a passive drain that uses gravity to remove small volumes of fluid. Its main disadvantage is that it's difficult to measure fluid production, and it can allow air to enter the wound.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6224827766418457
+  },
+  {
+    "id": "q25",
+    "question": "What is the difference between pharmacodynamics and pharmacokinetics?",
+    "expected": "Pharmacodynamics is the study of what the drug does to the body, while pharmacokinetics is the study of what the body does to the drug (ADME).",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7331774234771729
+  },
+  {
+    "id": "q26",
+    "question": "What is the characteristic microscopic feature of Gumboro disease in the bursa of Fabricius?",
+    "expected": "Depletion of lymphocytes in the bursal follicles, which can be seen as edema, hemorrhage, and inflammation in acute stages, and atrophy in later stages.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4495696425437927
+  },
+  {
+    "id": "q27",
+    "question": "What is the primary mechanism of liver injury in edema disease of swine?",
+    "expected": "While the primary lesion is vascular, the Shiga-like toxin produced by Escherichia coli causes necrotizing arteritis, which can lead to infarction and edema in various organs, including the brain and stomach wall.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.4151369631290436
+  },
+  {
+    "id": "q28",
+    "question": "What are the three main forms of anthrax in humans and how are they acquired?",
+    "expected": "Cutaneous (through skin contact), pulmonary (inhalation of spores), and intestinal (ingestion of contaminated meat).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5179129242897034
+  },
+  {
+    "id": "q29",
+    "question": "What is the difference between an agonist and an antagonist in pharmacology?",
+    "expected": "An agonist binds to a receptor and activates it, producing a response. An antagonist binds to a receptor but does not activate it, blocking the action of an agonist.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7413638234138489
+  },
+  {
+    "id": "q30",
+    "question": "In poultry, what are the two forms of coccidiosis, and which Eimeria species are primarily associated with each?",
+    "expected": "Caecal coccidiosis (Eimeria tenella) and intestinal coccidiosis (Eimeria necatrix).",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7222540974617004
+  },
+  {
+    "id": "q31",
+    "question": "What is the function of the clara cells in the bronchioles?",
+    "expected": "They secrete a glycoprotein that contributes to a protective layer of surfactant.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5962454676628113
+  },
+  {
+    "id": "q32",
+    "question": "What is the most common cause of infertility in dogs and cats?",
+    "expected": "Husbandry problems, including improper timing of breeding, breeding techniques, and male selection.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5077795386314392
+  },
+  {
+    "id": "q33",
+    "question": "List the four main families of Gram-positive, spore-forming large rods mentioned in the lecture outline.",
+    "expected": "Bacillus, Clostridium, (and the outline also includes filamentous non-spore forming rods like Actinomyces, Nocardia, and Dermatophilus in a separate group).",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6229385137557983
+  },
+  {
+    "id": "q34",
+    "question": "What is the characteristic postmortem finding in a chicken with Vitamin A deficiency?",
+    "expected": "Small white pustules or raised granules on the inner lining of the esophagus, caused by distended and impacted mucous glands.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.22990083694458008
+  },
+  {
+    "id": "q35",
+    "question": "What is the primary mechanism of renal injury caused by aminoglycoside antibiotics?",
+    "expected": "Induction of apoptosis and necrosis within the renal tubular epithelial cells, primarily in the proximal convoluted tubule.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.33743998408317566
+  },
+  {
+    "id": "q36",
+    "question": "What are the three phases of milk fever in cows?",
+    "expected": "Stage 1: Excitement; Stage 2: Sternal recumbency; Stage 3: Lateral recumbency.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.2310182750225067
+  },
+  {
+    "id": "q37",
+    "question": "What is the primary vector for Leishmania, and what life stage does it transmit?",
+    "expected": "The female phlebotomine sandfly transmits the promastigote stage of the parasite during a blood meal.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5852081179618835
+  },
+  {
+    "id": "q38",
+    "question": "What is the most common cause of infectious bovine keratoconjunctivitis ('pink eye')?",
+    "expected": "Moraxella bovis, specifically piliated strains capable of adhering to the corneal epithelium.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.49887022376060486
+  },
+  {
+    "id": "q39",
+    "question": "What is the mechanism of action of the tetanospasmin toxin from Clostridium tetani?",
+    "expected": "It inhibits the release of inhibitory neurotransmitters (GABA and glycine) at the neuromuscular junction, leading to uncontrolled muscle contraction and spastic paralysis.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.2735821008682251
+  },
+  {
+    "id": "q40",
+    "question": "What are the three main phases of a drug's action in the body according to the principles of pharmacology?",
+    "expected": "The pharmaceutical phase (disintegration and dissolution), the pharmacokinetic phase (ADME), and the pharmacodynamic phase (drug-receptor interaction and effect).",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6302780508995056
+  },
+  {
+    "id": "q41",
+    "question": "In poultry, what are the three most common bacterial causes of gangrenous dermatitis?",
+    "expected": "Clostridia, Staphylococci, and Escherichia coli, often in combination.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5174615383148193
+  },
+  {
+    "id": "q42",
+    "question": "What are the two forms of gout in poultry?",
+    "expected": "Visceral gout (deposition of urates on internal organs) and articular gout (deposition in the joints).",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6783246994018555
+  },
+  {
+    "id": "q43",
+    "question": "What is the confirmed infectious cause of infertility in female dogs?",
+    "expected": "Brucellosis, caused by the bacterium Brucella canis.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6170204877853394
+  },
+  {
+    "id": "q44",
+    "question": "What are the two main types of surgical drains based on their mechanism of action?",
+    "expected": "Passive drains (rely on gravity and pressure, e.g., Penrose drain) and active drains (create negative pressure to pull fluid out, e.g., Jackson-Pratt drain).",
+    "found": true,
+    "status": "FOUND",
+    "best_sim": 0.7885838150978088
+  },
+  {
+    "id": "q45",
+    "question": "What is a 'seroma' and how can it be prevented?",
+    "expected": "A seroma is an accumulation of serous fluid in a tissue layer. It can be prevented by using aseptic technique, achieving good hemostasis, careful tissue apposition to obliterate dead space, and placement of drains.",
+    "found": true,
+    "status": "FOUND",
+    "best_sim": 0.8193401098251343
+  },
+  {
+    "id": "q46",
+    "question": "According to the notes, what is the most common cause of early chick mortality (first week after hatching)?",
+    "expected": "Yolk sac infection (omphalitis), most commonly caused by Escherichia coli.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.6113839745521545
+  },
+  {
+    "id": "q47",
+    "question": "What is a major zoonotic risk associated with Taenia solium, beyond causing intestinal taeniasis?",
+    "expected": "Ingestion of its eggs can lead to cysticercosis in humans, where larvae encyst in tissues, including the brain (neurocysticercosis).",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.43142014741897583
+  },
+  {
+    "id": "q48",
+    "question": "What is the mechanism of action of steroid hormones?",
+    "expected": "They diffuse across the cell membrane, bind to intracellular receptors in the cytoplasm or nucleus, and the hormone-receptor complex then binds to DNA to activate or repress specific genes.",
+    "found": false,
+    "status": "PARTIAL",
+    "best_sim": 0.7098082900047302
+  },
+  {
+    "id": "q49",
+    "question": "In the context of metabolic diseases, what is meant by the term 'production diseases'?",
+    "expected": "Disorders induced by the combined stress of high production and inadequate or wrongly balanced feed input, or excess output.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5560159683227539
+  },
+  {
+    "id": "q50",
+    "question": "What is the role of eosinophils in type I hypersensitivity reactions?",
+    "expected": "They modulate the inflammation by releasing enzymes like histaminase to neutralize histamine and minimize tissue damage.",
+    "found": false,
+    "status": "MISS",
+    "best_sim": 0.5054845213890076
+  }
+]

@@ -22,8 +22,8 @@ for file in os.listdir(DATA_PATH):
         documents.extend(loader.load())
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=50
+    chunk_size=800,
+    chunk_overlap=150
 )
 
 chunks = text_splitter.split_documents(documents)
