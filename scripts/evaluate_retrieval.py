@@ -1,22 +1,23 @@
 import json
 import argparse
+import os
+import sys
 from pathlib import Path
 import time
 import numpy as np
 
+# Ensure repo root is on sys.path so local package imports work
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
 try:
     from vet_ai_tutor.config import VECTOR_PATH, EMBEDDING_MODEL
-except Exception:
+except Exception as _e:
+    print(f"WARNING: config import failed: {_e}, using defaults")
     VECTOR_PATH = "data/vectorstore"
     EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
-try:
-    from langchain.embeddings import HuggingFaceEmbeddings
-    from langchain.vectorstores import FAISS
-except Exception:
-    # fallbacks used in this repo
-    from langchain_huggingface import HuggingFaceEmbeddings
-    from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 
 def normalize(text: str) -> str:
     return (text or "").strip().lower()
@@ -49,6 +50,7 @@ def main():
     print(f"Loaded {len(qas)} QA pairs from {qa_path}")
 
     print("Loading embeddings and FAISS index...")
+    print(f"EMBEDDING_MODEL = {EMBEDDING_MODEL}")
     embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
     db = FAISS.load_local(VECTOR_PATH, embeddings, allow_dangerous_deserialization=True)
 
