@@ -235,6 +235,99 @@ class Tutor:
             self.history.append(("assistant", answer))
         return answer, docs
 
+    def ask_stream(self, question: str, k: int = None, remember: bool = True):
+        """Like ask(), but yields (token, docs) chunks for streaming UX.
+        
+        The first yield includes docs; subsequent yields have docs=None.
+        After iteration, call get_last_docs() if needed.
+        """
+        if self.db is None:
+            raise RuntimeError("Vectorstore not loaded; cannot answer questions.")
+
+        k = k or RETRIEVER_K
+
+        if re.match(r"^(hi|hello|hey|good\s(morning|afternoon|evening))\b", question.strip().lower()):
+            reply = "Hello! I'm your Vet AI Tutor — ask me a veterinary question or say what you'd like to learn."
+            if remember:
+                self.history.append(("user", question))
+                self.history.append(("assistant", reply))
+            yield reply, []
+            return
+
+        if remember:
+            self.history.append(("user", question))
+
+        # Enrich vague follow-ups
+        search_query = question
+        if len(question.split()) < 8 and self.history:
+            prev_user_msgs = [c for r, c in self.history[:-1] if r == "user"]
+            if prev_user_msgs:
+                search_query = prev_user_msgs[-1] + " " + question
+
+        docs = self._hybrid_retrieve(search_query, k)
+        self._last_docs = docs
+
+        # Build prompt (same as ask())
+        context_parts = []
+        for i, d in enumerate(docs, start=1):
+            meta = getattr(d, "metadata", {}) or {}
+            source = meta.get("source") or meta.get("source_file") or meta.get("doc_id") or "unknown"
+            chunk = meta.get("chunk") if "chunk" in meta else meta.get("chunk_index")
+            label = f"[S{i}]"
+            target = f"{source}#{chunk}" if chunk is not None else f"{source}"
+            text = (getattr(d, "page_content", "") or "").strip()
+            context_parts.append(f"{label} {target}\n{text}")
+
+        context = "\n\n".join(context_parts)
+        history_text = "\n".join(f"{r}: {c}" for r, c in self.history[-4:])
+
+        if context.strip():
+            prompt = (
+                "You are a veterinary tutor. Answer from the Context only. "
+                "Cite sources as [S1], [S2]. If not found, say so.\n\n"
+                f"History:\n{history_text}\n\n"
+                f"Context:\n{context}\n\n"
+                f"Question: {question}\n\n"
+                "Answer concisely (under 200 words), then list SOURCES.\n\nAnswer:"
+            )
+        else:
+            prompt = (
+                "System: You are a friendly veterinary tutor. "
+                "Use conversation history for chatty replies.\n\n"
+                f"{history_text}\n\n"
+                f"Question: {question}\n\n"
+                "Answer succinctly and helpfully. If unsure, say \"I don't know.\".\n\n"
+                "Answer:"
+            )
+
+        # Stream tokens
+        full_answer = []
+        for token in self.llm.stream(prompt):
+            full_answer.append(str(token))
+            yield str(token), docs
+
+        if remember:
+            self.history.append(("assistant", "".join(full_answer)))
+
+    def suggest_followups(self, question: str, answer: str, num: int = 3) -> List[str]:
+        """Generate suggested follow-up questions based on the Q&A."""
+        prompt = (
+            "Based on this veterinary Q&A, suggest exactly {num} short follow-up questions "
+            "a student would likely ask next. Return ONLY the questions, one per line, "
+            "no numbering or bullets.\n\n"
+            f"Question: {question}\n"
+            f"Answer: {answer[:300]}\n\n"
+            "Follow-up questions:"
+        ).format(num=num)
+        try:
+            raw = self.llm.invoke(prompt)
+            lines = [l.strip().lstrip("0123456789.-) ") for l in raw.strip().split("\n") if l.strip()]
+            # Filter to reasonable question-like lines
+            followups = [l for l in lines if len(l) > 10 and l.endswith("?")][:num]
+            return followups if followups else []
+        except Exception:
+            return []
+
     def reset_history(self):
         self.history = []
 

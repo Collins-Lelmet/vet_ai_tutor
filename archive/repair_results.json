@@ -1,0 +1,22 @@
+{
+  "data\\raw_notes\\DR WERE presentation class.pptx": {
+    "ok": false,
+    "msg": "validation_failed:PermissionError(13, 'The process cannot access the file because it is being used by another process')"
+  },
+  "data\\raw_notes\\Full lecture notes VMED 452(1).docx": {
+    "ok": false,
+    "msg": "open_failed:BadZipFile('File is not a zip file')"
+  },
+  "data\\raw_notes\\Group 6 - Copy.pptx": {
+    "ok": false,
+    "msg": "validation_failed:PermissionError(13, 'The process cannot access the file because it is being used by another process')"
+  },
+  "data\\raw_notes\\Group 6.pptx": {
+    "ok": false,
+    "msg": "validation_failed:PermissionError(13, 'The process cannot access the file because it is being used by another process')"
+  },
+  "data\\raw_notes\\PHARMACOLOGY NOTES.docx": {
+    "ok": false,
+    "msg": "validation_failed:PermissionError(13, 'The process cannot access the file because it is being used by another process')"
+  }
+}

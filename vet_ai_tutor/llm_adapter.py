@@ -13,3 +13,12 @@ class OllamaAdapter:
         if hasattr(self._llm, "generate"):
             return self._llm.generate(prompt)
         raise RuntimeError("Provided LLM does not expose a callable interface")
+
+    def stream(self, prompt: str):
+        """Yield tokens one at a time for streaming UX."""
+        if hasattr(self._llm, "stream"):
+            for chunk in self._llm.stream(prompt):
+                yield chunk
+        else:
+            # fallback: yield the full response as one chunk
+            yield self.invoke(prompt)

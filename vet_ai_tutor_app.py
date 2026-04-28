@@ -20,11 +20,18 @@ def load_tutor():
         from langchain_ollama import OllamaLLM
         from vet_ai_tutor.core import Tutor
         from vet_ai_tutor.llm_adapter import OllamaAdapter
-        from vet_ai_tutor.config import VECTOR_PATH, LLM_MODEL
+        from vet_ai_tutor.config import VECTOR_PATH, LLM_MODEL, RETRIEVER_K
 
-        base_llm = OllamaLLM(model=LLM_MODEL, num_predict=512)
+        base_llm = OllamaLLM(model=LLM_MODEL, num_predict=512, timeout=300, keep_alive="30m")
         adapter = OllamaAdapter(base_llm)
         tutor = Tutor(llm=adapter, vector_path=VECTOR_PATH)
+
+        # Pre-warm: load model into Ollama memory so first real query is fast
+        try:
+            base_llm.invoke("Hi")
+        except Exception:
+            pass
+
         return tutor, None
     except Exception as e:
         return None, str(e)
@@ -45,42 +52,92 @@ if tutor.db is None:
 # maintain chat history in Streamlit session state
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
+if "followups" not in st.session_state:
+    st.session_state["followups"] = []
+if "pending_question" not in st.session_state:
+    st.session_state["pending_question"] = None
+
+# Track docs for display
+docs = []
+retrieved_context = ""
 
 # Reset button
 col1, col2 = st.columns([4, 1])
 with col2:
     if st.button("🔄 Reset"):
         st.session_state["chat_history"] = []
+        st.session_state["followups"] = []
         tutor.reset_history()
         st.rerun()
 
 # -----------------------------
 # User Input
 # -----------------------------
-question = st.chat_input("Ask a veterinary question...")
+question = None
+typed_question = st.chat_input("Ask a veterinary question...")
+if typed_question:
+    question = typed_question
+elif st.session_state["pending_question"]:
+    question = st.session_state["pending_question"]
+    st.session_state["pending_question"] = None
 
 if question:
+    st.session_state["followups"] = []  # clear old follow-ups
     # append user message immediately
     st.session_state["chat_history"].append(("You", question))
 
-    with st.spinner("Thinking..."):
-        try:
-            answer, docs = tutor.ask(question, k=6)
-            retrieved_context = "\n\n---\n\n".join(
-                f"**{getattr(d, 'metadata', {}).get('source', 'unknown')}**\n{d.page_content}"
-                for d in docs
-            )
-        except Exception as e:
-            answer = f"Error: {e}"
-            retrieved_context = ""
+    # Display all previous messages first
+    for who, text in st.session_state["chat_history"]:
+        with st.chat_message("user" if who == "You" else "assistant"):
+            st.markdown(text)
+
+    # Stream the new response
+    try:
+        with st.chat_message("assistant"):
+            placeholder = st.empty()
+            full_response = ""
             docs = []
+            for token, token_docs in tutor.ask_stream(question):
+                full_response += token
+                docs = token_docs
+                placeholder.markdown(full_response + "▌")
+            placeholder.markdown(full_response)
 
-    st.session_state["chat_history"].append(("Tutor", answer))
+        retrieved_context = "\n\n---\n\n".join(
+            f"**{getattr(d, 'metadata', {}).get('source', 'unknown')}**\n{d.page_content}"
+            for d in docs
+        )
+    except Exception as e:
+        full_response = f"Error: {e}"
+        retrieved_context = ""
+        docs = []
 
-# Display conversation
-for who, text in st.session_state["chat_history"]:
-    with st.chat_message("user" if who == "You" else "assistant"):
-        st.markdown(text)
+    st.session_state["chat_history"].append(("Tutor", full_response))
+
+    # Generate suggested follow-ups (runs in background while user reads)
+    if full_response and not full_response.startswith("Error"):
+        try:
+            followups = tutor.suggest_followups(question, full_response, num=3)
+            st.session_state["followups"] = followups
+        except Exception:
+            st.session_state["followups"] = []
+
+else:
+    # No new question — just display history
+    for who, text in st.session_state["chat_history"]:
+        with st.chat_message("user" if who == "You" else "assistant"):
+            st.markdown(text)
+
+# Show suggested follow-ups
+if st.session_state.get("followups"):
+    st.markdown("**💡 You might also ask:**")
+    cols = st.columns(len(st.session_state["followups"]))
+    for i, (col, fu) in enumerate(zip(cols, st.session_state["followups"])):
+        with col:
+            if st.button(fu, key=f"followup_{i}", use_container_width=True):
+                st.session_state["pending_question"] = fu
+                st.session_state["followups"] = []
+                st.rerun()
 
 # Show retrieved context if there are docs from the last question
 if st.session_state["chat_history"] and docs:

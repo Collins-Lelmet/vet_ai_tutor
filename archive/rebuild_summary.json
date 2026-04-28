@@ -1,0 +1,177 @@
+{
+  "loaded_pages": 13724,
+  "chunks": 30411,
+  "failed": [
+    {
+      "path": "data/raw_notes\\1689151193406_SUTURES AND SUTURE TECHNIQUES.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpemhj9rpw\\1689151193406_SUTURES AND SUTURE TECHNIQUES.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\4. Food borne diseases.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpj_t34f2e\\4. Food borne diseases.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\4th yr-CT-MRI-Scint (2).ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmp4rkv15mk\\4th yr-CT-MRI-Scint (2).pptx'"
+    },
+    {
+      "path": "data/raw_notes\\ANEMIA AND PETECHIATION.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpvadjq60b\\ANEMIA AND PETECHIATION.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 451 NOTES SEPTEMBER 2022.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmphnj5cgiu\\\\ANSC 450 451 NOTES SEPTEMBER 2022.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 CAT EXAM  May 2022.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmp7t0ktphh\\\\ANSC 450 CAT EXAM  May 2022.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 EXAM  AND MARKING SCHEME DECEMBER 2019 (2).doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmp_d9588wv\\\\ANSC 450 EXAM  AND MARKING SCHEME DECEMBER 2019 (2).docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 EXAM  Dec 2023.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpdu5kzf8k\\\\ANSC 450 EXAM  Dec 2023.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 EXAM  and marking scheme Dec 2023.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpq1m0y_r_\\\\ANSC 450 EXAM  and marking scheme Dec 2023.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 EXAM  and marking scheme July 2022.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpb4f7xlz3\\\\ANSC 450 EXAM  and marking scheme July 2022.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 RESIT EXAM AUGUST 2022.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpon6f4xqr\\\\ANSC 450 RESIT EXAM AUGUST 2022.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 450 moderated EXAM  Dec 2023.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmprge7x1wc\\\\ANSC 450 moderated EXAM  Dec 2023.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ANSC 460 & 461 Course Outline_2024.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpwgm8bdhn\\\\ANSC 460 & 461 Course Outline_2024.docx'"
+    },
+    {
+      "path": "data/raw_notes\\AQUACULTURE-FISH FARMING. NOTES 2022doc.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpa7qxotd1\\\\AQUACULTURE-FISH FARMING. NOTES 2022doc.docx'"
+    },
+    {
+      "path": "data/raw_notes\\AQUACULTURE-FISH FARMING. NOTES 2024doc.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpf3nr7pdr\\\\AQUACULTURE-FISH FARMING. NOTES 2024doc.docx'"
+    },
+    {
+      "path": "data/raw_notes\\ASEPTIC TECHNQUES.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpt7em0ny8\\ASEPTIC TECHNQUES.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\BVMSr Yr One Study Notes VMED 105  Overview of SPINAL NERVES JUNE 2022.pdf",
+      "error": "cryptography>=3.1 is required for AES algorithm"
+    },
+    {
+      "path": "data/raw_notes\\CLASSIFICATION OF FRACTURES.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpzdg9nn74\\CLASSIFICATION OF FRACTURES.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Common surgical instruments.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpnubhr2_g\\Common surgical instruments.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\DIFFERENTIAL DIAGNOSIS-Respiratory distress and snoring.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpx5d5en0k\\DIFFERENTIAL DIAGNOSIS-Respiratory distress and snoring.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\DR WERE presentation class.pptx",
+      "error": "Bad CRC-32 for file 'ppt/media/image2.png'"
+    },
+    {
+      "path": "data/raw_notes\\Differential Dx of Lymhadenopathy in large animal (1).ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpwsncwcxi\\Differential Dx of Lymhadenopathy in large animal (1).pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Differential Dx of Lymhadenopathy in large animal.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmptv87hou3\\Differential Dx of Lymhadenopathy in large animal.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Diffrential diagnosis for diarrhoea and dysentry in large.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpiv27qkf_\\Diffrential diagnosis for diarrhoea and dysentry in large.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\ENSC -1.docx.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpvovokx86\\\\ENSC -1.docx.docx'"
+    },
+    {
+      "path": "data/raw_notes\\Full lecture notes VMED 452(1).docx",
+      "error": "File is not a zip file"
+    },
+    {
+      "path": "data/raw_notes\\Helminthosis.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpmmjdjchr\\Helminthosis.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\INTERNAL FIXATION OF FRACTURES IN SMALL ANIMALS_BRIEF VERSION_2010.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpwd76wkts\\INTERNAL FIXATION OF FRACTURES IN SMALL ANIMALS_BRIEF VERSION_2010.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Integumentary system Diseases-DR WERE.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmp8pu4prou\\Integumentary system Diseases-DR WERE.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\IntroductiontoVPH.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpduh4mbsy\\IntroductiontoVPH.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\PHYLUM PLATYHELMINTHES.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpetv8hoe1\\\\PHYLUM PLATYHELMINTHES.docx'"
+    },
+    {
+      "path": "data/raw_notes\\PRINCIPLES OF RADIOLOGY revised.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmp5vbn97x0\\PRINCIPLES OF RADIOLOGY revised.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Peurperium - 1.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpjhbdmmii\\Peurperium - 1.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\SARCOSYTS NOTES 2022.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpc1qwcz7e\\\\SARCOSYTS NOTES 2022.docx'"
+    },
+    {
+      "path": "data/raw_notes\\SUTURE PATTERNS AND SUTURE TECHNIQUES.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpg_6nriic\\SUTURE PATTERNS AND SUTURE TECHNIQUES.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\Scouring in Sheep DDX.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmp6wbvjf4c\\\\Scouring in Sheep DDX.docx'"
+    },
+    {
+      "path": "data/raw_notes\\Special Pathology of Protozoal Diseases.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpt8msyrgq\\Special Pathology of Protozoal Diseases.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\TBDs-TRYPS-BSc Agric-RM-2022_dm.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmppiiadpw7\\TBDs-TRYPS-BSc Agric-RM-2022_dm.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\TICK & MANGE CONTROL.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpc7buqtnx\\TICK & MANGE CONTROL.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\UROGENITAL DISEASES bvms EU.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpytzq1b_s\\UROGENITAL DISEASES bvms EU.pptx'"
+    },
+    {
+      "path": "data/raw_notes\\VMED-230-IMMUNOLOGY NOTES-2021.doc",
+      "error": "no such file or directory: 'C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Temp\\\\tmpftgziszh\\\\VMED-230-IMMUNOLOGY NOTES-2021.docx'"
+    },
+    {
+      "path": "data/raw_notes\\null-2.ppt",
+      "error": "Package not found at 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmp0lttmfiz\\null-2.pptx'"
+    }
+  ],
+  "skipped": 15,
+  "vector_path": "data/vectorstore",
+  "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+}
