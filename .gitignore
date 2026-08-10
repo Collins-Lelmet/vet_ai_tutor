@@ -10,3 +10,13 @@ vectorstore/
 *.sqlite
 .DS_Store
 /*.log
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.sqlite
+*.db
+*.log
+data/vectorstore/
+data/raw_notes/
