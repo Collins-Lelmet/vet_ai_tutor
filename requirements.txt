@@ -1,0 +1,34 @@
+# Core LangChain
+langchain
+langchain-community
+langchain-huggingface
+langchain-ollama
+langchain-text-splitters
+
+# Vector store
+faiss-cpu
+
+# Embeddings
+sentence-transformers
+
+# Document loaders
+pypdf
+python-docx
+python-pptx
+docx2txt
+unstructured
+
+# BM25 hybrid search
+rank-bm25
+
+# Tokenizer
+tiktoken
+
+# UI
+streamlit
+
+# Utilities
+numpy
+
+# Testing
+pytest
