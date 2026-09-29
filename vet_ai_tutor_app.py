@@ -1,15 +1,32 @@
-import streamlit as st
+import os
 import logging
+
+import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 
 logging.basicConfig(level=logging.INFO)
 
 # -----------------------------
 # App Config
 # -----------------------------
-st.set_page_config(page_title="Vet AI Tutor (Local)", page_icon="🐄", layout="centered")
+st.set_page_config(page_title="Veterinary AI Tutor", page_icon="🐄", layout="centered")
 
-st.title("🐄 Veterinary AI Tutor (Local)")
-st.caption("Runs fully offline using Ollama + your local knowledge base")
+st.title("🐄 Veterinary AI Tutor")
+
+
+def get_setting(name, default=None):
+    try:
+        value = st.secrets.get(name)
+    except StreamlitSecretNotFoundError:
+        value = None
+    return value or os.getenv(name, default)
+
+
+llm_provider = get_setting("VET_AI_LLM_PROVIDER", "ollama").lower()
+if llm_provider == "ollama":
+    st.caption("Local Ollama model with your local knowledge base")
+else:
+    st.caption("Hosted language model with your configured knowledge base")
 
 # -----------------------------
 # Load Embeddings & Vector Store
@@ -17,20 +34,45 @@ st.caption("Runs fully offline using Ollama + your local knowledge base")
 @st.cache_resource
 def load_tutor():
     try:
-        from langchain_ollama import OllamaLLM
         from vet_ai_tutor.core import Tutor
-        from vet_ai_tutor.llm_adapter import OllamaAdapter
-        from vet_ai_tutor.config import VECTOR_PATH, LLM_MODEL, RETRIEVER_K
+        from vet_ai_tutor.config import VECTOR_PATH, LLM_MODEL
 
-        base_llm = OllamaLLM(model=LLM_MODEL, num_predict=512, timeout=300, keep_alive="30m")
-        adapter = OllamaAdapter(base_llm)
+        if llm_provider == "ollama":
+            from langchain_ollama import OllamaLLM
+            from vet_ai_tutor.llm_adapter import OllamaAdapter
+
+            base_llm = OllamaLLM(model=LLM_MODEL, num_predict=512, timeout=300, keep_alive="30m")
+            adapter = OllamaAdapter(base_llm)
+        elif llm_provider in {"openai", "openai-compatible", "openai_compatible"}:
+            from langchain_openai import ChatOpenAI
+            from vet_ai_tutor.llm_adapter import LangChainChatAdapter
+
+            api_key = get_setting("OPENAI_API_KEY")
+            if not api_key:
+                raise RuntimeError("Set OPENAI_API_KEY in Streamlit secrets to use the hosted model.")
+
+            model_options = {
+                "model": get_setting("OPENAI_MODEL", "gpt-4o-mini"),
+                "api_key": api_key,
+                "timeout": 120,
+            }
+            base_url = get_setting("OPENAI_BASE_URL")
+            if base_url:
+                model_options["base_url"] = base_url
+            base_llm = ChatOpenAI(**model_options)
+            adapter = LangChainChatAdapter(base_llm)
+        else:
+            raise ValueError(
+                "VET_AI_LLM_PROVIDER must be 'ollama' or 'openai-compatible'."
+            )
+
         tutor = Tutor(llm=adapter, vector_path=VECTOR_PATH)
 
-        # Pre-warm: load model into Ollama memory so first real query is fast
-        try:
-            base_llm.invoke("Hi")
-        except Exception:
-            pass
+        if llm_provider == "ollama":
+            try:
+                base_llm.invoke("Hi")
+            except Exception:
+                pass
 
         return tutor, None
     except Exception as e:
@@ -40,13 +82,10 @@ tutor, load_error = load_tutor()
 
 if load_error:
     st.error(f"Failed to initialize tutor: {load_error}")
-    st.info("Make sure Ollama is running and the vectorstore has been built. "
-            "Run: `python scripts/rebuild_vectorstore.py`")
     st.stop()
-
-if tutor.db is None:
+if tutor is None or tutor.db is None:
     st.error("Vectorstore not found or failed to load.")
-    st.info("Build it first: `python scripts/rebuild_vectorstore.py`")
+    st.info("Build it locally with `.venv\\Scripts\\python scripts\\rebuild_vectorstore.py`.")
     st.stop()
 
 # maintain chat history in Streamlit session state
@@ -145,4 +184,7 @@ if st.session_state["chat_history"] and docs:
         st.markdown(retrieved_context)
 
 st.markdown("---")
-st.caption("Local • Private • No Internet Required")
+if llm_provider == "ollama":
+    st.caption("Local Ollama • No external LLM API")
+else:
+    st.caption("Hosted LLM • Questions and retrieved note excerpts are sent to your configured provider")

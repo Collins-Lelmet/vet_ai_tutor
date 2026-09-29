@@ -1,22 +1,25 @@
-venv/
+# Python environments and caches
 .venv/
+venv/
 env/
-.env
 __pycache__/
-*.pyc
-data/vectorstore/
-vectorstore/
-*.db
-*.sqlite
-.DS_Store
-/*.log
-__pycache__/
-*.pyc
-.venv/
-venv/
+*.py[cod]
+
+# Local secrets
 .env
-*.sqlite
-*.db
-*.log
-data/vectorstore/
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local source material and generated indexes
 data/raw_notes/
+data/vectorstore/*
+!data/vectorstore/index.faiss
+!data/vectorstore/index.pkl
+/vectorstore/
+*.db
+*.sqlite
+
+# Local machine files and logs
+.DS_Store
+*.log

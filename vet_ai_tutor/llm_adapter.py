@@ -22,3 +22,36 @@ class OllamaAdapter:
         else:
             # fallback: yield the full response as one chunk
             yield self.invoke(prompt)
+
+
+class LangChainChatAdapter:
+    """Expose LangChain chat-model messages as plain text for Tutor."""
+
+    def __init__(self, llm):
+        self._llm = llm
+
+    @staticmethod
+    def _text(message):
+        content = getattr(message, "content", message)
+        if isinstance(content, str):
+            return content
+        if isinstance(content, list):
+            parts = []
+            for block in content:
+                if isinstance(block, str):
+                    parts.append(block)
+                elif isinstance(block, dict) and "text" in block:
+                    parts.append(str(block["text"]))
+                elif hasattr(block, "text"):
+                    parts.append(str(block.text))
+            return "".join(parts)
+        return str(content)
+
+    def invoke(self, prompt: str) -> str:
+        return self._text(self._llm.invoke(prompt))
+
+    def stream(self, prompt: str):
+        for chunk in self._llm.stream(prompt):
+            text = self._text(chunk)
+            if text:
+                yield text

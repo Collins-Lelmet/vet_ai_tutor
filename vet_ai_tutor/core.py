@@ -76,8 +76,13 @@ class Tutor:
             self.embeddings = None
 
         try:
+            index_path = self.vector_path
+            if not os.path.isdir(index_path):
+                alt_path = os.path.join(os.getcwd(), self.vector_path)
+                if os.path.isdir(alt_path):
+                    index_path = alt_path
             self.db = FAISS.load_local(
-                self.vector_path, self.embeddings, allow_dangerous_deserialization=True
+                index_path, self.embeddings, allow_dangerous_deserialization=True
             )
         except Exception as e:
             logger.exception("Failed to load FAISS index: %s", e)
@@ -164,7 +169,7 @@ class Tutor:
 
     def ask(self, question: str, k: int = None, remember: bool = True) -> Tuple[str, List]:
         if self.db is None:
-            raise RuntimeError("Vectorstore not loaded; cannot answer questions. Rebuild vectorstore first.")
+            raise RuntimeError("Vectorstore not loaded; cannot answer questions. Rebuild the index with the unified pipeline first.")
 
         k = k or RETRIEVER_K
         # quick rule: handle simple greetings locally

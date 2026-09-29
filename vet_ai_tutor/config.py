@@ -1,6 +1,7 @@
 # Central configuration for Vet AI Tutor
 VECTOR_PATH = "data/vectorstore"
-EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+LEGACY_VECTOR_PATH = "vectorstore"
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL = "llama3.2-fast"
 RETRIEVER_K = 4
 
